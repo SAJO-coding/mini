@@ -8,5 +8,6 @@ public class MainView {
         System.out.println("김성민입니다");
         System.out.println("김성민입니다");
         System.out.println("김성민입니다");
+
     }
 }
