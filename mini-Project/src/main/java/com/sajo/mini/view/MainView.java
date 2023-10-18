@@ -16,6 +16,7 @@ public class MainView {
         System.out.println("누가");
         System.out.println("다른거");
         System.out.println("dhfskajlsdf;klj");
+        System.out.println("DONGROCK 테스트");
     }
 }
 
