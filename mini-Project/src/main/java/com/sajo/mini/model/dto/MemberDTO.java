@@ -12,7 +12,7 @@ public class MemberDTO {private String userId;
         this.userId = userId;
         this.userJob = userJob;
         this.userLevel = userLevel;
-        this.userGold = userGold;
+        this.userGold= userGold;
     }
 
     public String getUserId() {
@@ -39,13 +39,6 @@ public class MemberDTO {private String userId;
         this.userLevel = userLevel;
     }
 
-    public int getUserGold() {
-        return userGold;
-    }
-
-    public void setUserGold(int userGold) {
-        this.userGold = userGold;
-    }
 
     @Override
     public String toString() {
@@ -53,7 +46,6 @@ public class MemberDTO {private String userId;
                 "userId='" + userId + '\'' +
                 ", userJob='" + userJob + '\'' +
                 ", userLevel=" + userLevel +
-                ", userGold=" + userGold +
                 '}';
     }
 
