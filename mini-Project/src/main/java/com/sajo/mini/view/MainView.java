@@ -19,6 +19,12 @@ public class MainView {
         System.out.println("DONGROCK 테스트");
         System.out.println("DONGROCK 테스트");
         System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
     }
 }
 
