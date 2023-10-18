@@ -6,6 +6,7 @@ public class MainView {
         System.out.println(sum);
         System.out.println("hihi");
         System.out.println("나만 못해 git");
+        System.out.println("gg");
 
 
     }
