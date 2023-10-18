@@ -8,7 +8,12 @@ public class MainView {
         System.out.println(num1);
         System.out.println(num1);
         System.out.println(num1);
-
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
+        System.out.println("DONGROCK 테스트");
         System.out.println(num1);
         System.out.println(num1);
         System.out.println(num1);
