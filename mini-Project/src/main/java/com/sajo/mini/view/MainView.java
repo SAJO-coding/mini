@@ -5,6 +5,7 @@ public class MainView {
         String sum = "sungmin";
         System.out.println(sum);
         System.out.println("hihi");
+        System.out.println("나만 못해 git");
 
 
     }
