@@ -5,7 +5,8 @@ public class MainView {
         String sum = "sungmin";
         System.out.println(sum);
 
-
-
+        System.out.println("김성민입니다");
+        System.out.println("김성민입니다");
+        System.out.println("김성민입니다");
     }
 }
