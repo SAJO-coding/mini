@@ -34,6 +34,24 @@ public class MainView {
         System.out.println("수정수정");
 
         System.out.println("6시 42분 집가고싶다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
+        System.out.println("1시 업데이트 갑니다.");
     }
 }
 
