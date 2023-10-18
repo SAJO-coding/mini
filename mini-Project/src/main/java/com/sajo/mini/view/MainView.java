@@ -27,6 +27,8 @@ public class MainView {
         System.out.println("DONGROCK 테스트");
 
         System.out.println("수정수정");
+
+        System.out.println("6시 42분 집가고싶다.");
     }
 }
 
