@@ -14,4 +14,9 @@ public class MainController {
         System.out.println("4");
 
     }
+
+    public void testMethod() {
+
+        System.out.println("test입니다.");
+    }
 }
