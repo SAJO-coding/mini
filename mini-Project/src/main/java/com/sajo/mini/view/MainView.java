@@ -27,6 +27,8 @@ public class MainView {
         System.out.println("수정수정");
 
         System.out.println("6시 42분 집가고싶다.");
+
+        System.out.println("오늘 남아서 스터디!");
     }
 }
 //내꺼 브랜치에서 작업 -> 커밋, 푸시 -> 메인으로 변경 -> git pull -> git merge(origin/yeonji)
