@@ -24,6 +24,8 @@ public class MainView {
         System.out.println("gg");
 
         System.out.println("다시 14:20");
+        System.out.println("다시 15:00");
+        System.out.println("hy");
 
 
 
@@ -37,6 +39,8 @@ public class MainView {
         System.out.println("wlrmadms 3tl 56qns");
 
         System.out.println("test2");
+
+        System.out.println("g하이하이");
     }
 }
 
