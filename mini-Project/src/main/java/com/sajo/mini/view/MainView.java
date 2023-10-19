@@ -9,49 +9,12 @@ public class MainView {
         System.out.println(num1);
         System.out.println(num1);
         System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
+        System.out.println("3시 11 분 해봅니다.");
         System.out.println("DONGROCK 테스트");
         System.out.println(num1);
         System.out.println(num1);
         System.out.println(num1);
 
-        System.out.println("누가");
-        System.out.println("다른거");
-        System.out.println("dhfskajlsdf;klj");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-        System.out.println("DONGROCK 테스트");
-
-        System.out.println("수정수정");
-
-        System.out.println("6시 42분 집가고싶다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
-        System.out.println("1시 업데이트 갑니다.");
     }
 }
 
