@@ -30,6 +30,9 @@ public class MainView {
 
 
 
+        System.out.println("6시 42분 집가고싶다.");
+
+        System.out.println("오늘 남아서 스터디!");
     }
 }
 
