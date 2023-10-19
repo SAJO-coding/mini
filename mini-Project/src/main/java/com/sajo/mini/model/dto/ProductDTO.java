@@ -8,11 +8,6 @@ public class ProductDTO {
     int price;
     int levelRestriction;
     String demonstration;
-    {
-        ProductController pc = new ProductController();
-        ProductDTO productDTO = new ProductDTO("제품이름","일",3,4,"기능");
-
-    }
 
     public String getProductName() {
         return ProductName;
