@@ -1,39 +1,51 @@
 package com.sajo.mini.member.controller;
 
-import com.sajo.mini.product.Product;
+import com.sajo.mini.model.dto.ProductDTO;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProductController {
+    ArrayList<ProductDTO> healerproduct = new ArrayList<>();
+    ArrayList<ProductDTO> tankerproduct = new ArrayList<>();
+    ArrayList<ProductDTO> dealerlist = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
-    Product product = new Product();
-    private void selectNumber() {
-        while (true) {
-            System.out.println("===== 메뉴 =====");
-            System.out.println("1. 아이템 등록");
-            System.out.println("2. 아이템 조회");
-            System.out.println("3. 아이템 삭제");
-            System.out.println("4. 종료");
-            int num1 = sc.nextInt();
-            sc.nextLine();
-            switch (num1){
-                case 1: productRegistration(); break;
-                case 2: productList(); break;
-                case 3: produceDelete(); break;
-                case 4: return;
-            }
+
+    public List<ProductDTO> butProduct(int answer){
+        ArrayList<ProductDTO> wantBuy = new ArrayList<>();
+        //선택한 번호의 템을 출력한다.
+        int want;
+        switch (answer){
+            case 1:
+                System.out.println(healerproduct);
+                System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 : ");
+                want =sc.nextInt();
+                wantBuy.add(healerproduct.get(want));
+                break;
+            case 2 :
+                System.out.println(tankerproduct);
+                System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 : ");
+                want =sc.nextInt();
+                wantBuy.add(tankerproduct.get(want));
+                break;
+            case 3 :
+                System.out.println(dealerlist);
+                System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 : ");
+                want =sc.nextInt();
+                wantBuy.add(dealerlist.get(want));
+                break;
+            default:
+                System.out.println("존재하는 번호가 아닙니다.");
+                System.out.println("다시 입력해주세요");
         }
+
+
+        return wantBuy;
     }
 
-    public void productRegistration(){
 
-    }
 
-    public void productList(){
 
-    }
 
-    public void produceDelete(){
-
-    }
 }
