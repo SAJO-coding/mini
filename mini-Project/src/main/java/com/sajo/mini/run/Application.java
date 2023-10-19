@@ -21,10 +21,8 @@ public class Application {
         ItemDTO itemDTO2 = new ItemDTO("신발1", "딜러", 3000, 8, "속도 +10");
         ItemDTO itemDTO3 = new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10");
 
-        mc.selectNumber();
 //        mmc.itemCart(item3);
 
-        ProductController pc = new ProductController();
         System.out.println("이용할 서비스를 선택해주세요");
         System.out.println("1. 상인관리페이지");
         System.out.println("2. 구매자 페이지");
