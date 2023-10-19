@@ -7,6 +7,7 @@ public class Application {
 
         MemberController mc = new MemberController();
         mc.selectNumber();
+        System.out.println("메인 받기 연습입니다.");
 
     }
 }
