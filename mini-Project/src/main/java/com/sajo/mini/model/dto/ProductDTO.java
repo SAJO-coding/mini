@@ -47,6 +47,8 @@ public class ProductDTO {
         this.demonstration = demonstration;
     }
 
+
+
     public ProductDTO(String productName, String job, int price, int levelRestriction, String demonstration) {
         ProductName = productName;
         Job = job;
@@ -56,5 +58,16 @@ public class ProductDTO {
     }
 
     public ProductDTO() {
+    }
+
+    @Override
+    public String toString() {
+        return "ProductDTO{" +
+                "ProductName='" + ProductName + '\'' +
+                ", Job='" + Job + '\'' +
+                ", price=" + price +
+                ", levelRestriction=" + levelRestriction +
+                ", demonstration='" + demonstration + '\'' +
+                '}';
     }
 }
