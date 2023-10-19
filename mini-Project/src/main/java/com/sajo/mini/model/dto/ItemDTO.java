@@ -1,6 +1,6 @@
 package com.sajo.mini.model.dto;
 
-public class Item {
+public class ItemDTO {
 
     private String itemName;
     private String itemJob;
@@ -9,10 +9,10 @@ public class Item {
 
     private String effect;
 
-    public Item() {
+    public ItemDTO() {
     }
 
-    public Item(String itemName, String itemJob, int itemPrice, int itemLevel, String effect) {
+    public ItemDTO(String itemName, String itemJob, int itemPrice, int itemLevel, String effect) {
         this.itemName = itemName;
         this.itemJob = itemJob;
         this.itemPrice = itemPrice;

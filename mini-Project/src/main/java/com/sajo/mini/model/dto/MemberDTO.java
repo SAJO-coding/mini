@@ -1,8 +1,6 @@
 package com.sajo.mini.model.dto;
 
-public class MemberDTO {
-
-    private String userId;
+public class MemberDTO {private String userId;
     private String userJob;
     int userLevel;
     int userGold;
@@ -58,4 +56,5 @@ public class MemberDTO {
                 ", userGold=" + userGold +
                 '}';
     }
+
 }

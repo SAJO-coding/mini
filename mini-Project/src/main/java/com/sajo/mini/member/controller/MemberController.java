@@ -1,6 +1,5 @@
-package com.sajo.mini.model.service;
+package com.sajo.mini.member.controller;
 
-import com.sajo.mini.member.controller.ProductController;
 import com.sajo.mini.model.dto.MemberDTO;
 
 import java.util.Scanner;
