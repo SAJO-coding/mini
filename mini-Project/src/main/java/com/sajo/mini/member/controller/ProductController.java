@@ -10,6 +10,14 @@ public class ProductController {
     ArrayList<ProductDTO> healerproduct = new ArrayList<>();
     ArrayList<ProductDTO> tankerproduct = new ArrayList<>();
     ArrayList<ProductDTO> dealerlist = new ArrayList<>();
+
+
+    {
+        ProductDTO productDTO = new ProductDTO("제품명","이름",3,4,"기능");
+        healerproduct.add(productDTO);
+        tankerproduct.add(productDTO);
+        dealerlist.add(productDTO);
+    }
     Scanner sc = new Scanner(System.in);
 
     public List<ProductDTO> butProduct(int answer){
