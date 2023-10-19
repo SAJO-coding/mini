@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class MemberController {
 
         Scanner sc = new Scanner(System.in);
-        MemberController mc = new MemberController();
+        MemberManagerController mmc = new MemberManagerController();
+
         ProductController pc = new ProductController();
 
 
@@ -21,20 +22,22 @@ public class MemberController {
         String job = sc.nextLine();
         int a = 1 ; //직업 특성의 능력치와 연결할 부분
 
-        MemberDTO memberDTO = new MemberDTO(name,level,level*a,job);
+        MemberDTO memberDTO = new MemberDTO(name,job,level, 10000);
 
         while (true){
+            System.out.println();
             System.out.println("===선택지===");
             System.out.println("1. 물건 보기");
             System.out.println("2. 장바구니 확인");
             System.out.println("3. 구매하기");
             System.out.println("9. 프로그램 종료");
             System.out.print("번호를 입력해주세요 : ");
+
             int answer = sc.nextInt();
             switch (answer){
-                case 1 : mc.productCategory();
+                case 1 : productCategory();
                     break;
-                case 2 : //shoppingList 호출
+                case 2 : mmc.cartPrint();
                     break;
                 case 3 : //buy 호출
                     break;

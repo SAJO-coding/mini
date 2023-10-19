@@ -1,16 +1,16 @@
 package com.sajo.mini.model.dto;
 
-public class Memberdto {
+public class MemberDTO {
 
     private String userId;
     private String userJob;
     int userLevel;
     int userGold;
 
-    public Memberdto() {
+    public MemberDTO() {
     }
 
-    public Memberdto(String userId, String userJob, int userLevel, int userGold) {
+    public MemberDTO(String userId, String userJob, int userLevel, int userGold) {
         this.userId = userId;
         this.userJob = userJob;
         this.userLevel = userLevel;
