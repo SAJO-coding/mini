@@ -1,6 +1,6 @@
 package com.sajo.mini.model.dto;
 
-public class Memberdto {
+public class MemberDTO {
 
 
 }
