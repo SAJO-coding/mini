@@ -11,7 +11,7 @@ public class MainController {
         Item item2 = new Item("신발1", "딜러", 3000, 8, "속도 +10");
         Item item3 = new Item("바지1", "딜러", 5000, 4, "힐 +10");
 
-       MemberController memberController = new MemberController();
+       MemberManagerController memberController = new MemberManagerController();
        memberController.itemCart(item3);
 
     }

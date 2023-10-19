@@ -1,9 +1,9 @@
 package com.sajo.mini.member.controller;
 
 import com.sajo.mini.model.dto.Item;
-import com.sajo.mini.model.dto.Memberdto;
+import com.sajo.mini.model.dto.MemberDTO;
 
-public class MemberController {
+public class MemberManagerController {
 
 //    //아이템 객체 배열
 //    Item item1 = new Item("갑옷1", "딜러", 2000, 5, "방어력 +10");
@@ -14,7 +14,7 @@ public class MemberController {
 //    Item[] items = new Item[] {item1, item2, item3};
 
     // 임시 사용자 정보
-    Memberdto member1 = new Memberdto("yunha", "딜러", 5, 10000);
+    MemberDTO member1 = new MemberDTO("yunha", "딜러", 5, 10000);
 
 
     // 장바구니
