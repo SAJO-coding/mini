@@ -64,13 +64,12 @@ public class ItemDTO {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return
                 "itemName='" + itemName + '\'' +
                 ", itemJob='" + itemJob + '\'' +
                 ", itemPrice=" + itemPrice +
                 ", itemLevel=" + itemLevel +
-                ", effect='" + effect + '\'' +
-                '}';
+                ", effect='" + effect + '\'' ;
     }
 }
 
