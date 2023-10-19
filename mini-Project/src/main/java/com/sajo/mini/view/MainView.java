@@ -12,6 +12,7 @@ public class MainView {
 
         System.out.println("다시 14:20");
         System.out.println("다시 15:00");
+        System.out.println("hy");
 
 
 
