@@ -22,5 +22,6 @@ public class MainController {
         System.out.println("test2222입니다.");
         System.out.println("test33333입니다.");
         System.out.println("test44444입니다.");
+        System.out.println("test 목요일 4:12");
     }
 }
