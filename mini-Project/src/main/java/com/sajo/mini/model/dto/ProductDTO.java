@@ -7,17 +7,6 @@ public class ProductDTO {
     int levelRestriction;
     String demonstration;
 
-    public ProductDTO() {
-    }
-
-    public ProductDTO(String productName, String job, int price, int levelRestriction, String demonstration) {
-        ProductName = productName;
-        Job = job;
-        this.price = price;
-        this.levelRestriction = levelRestriction;
-        this.demonstration = demonstration;
-    }
-
     public String getProductName() {
         return ProductName;
     }
@@ -58,14 +47,14 @@ public class ProductDTO {
         this.demonstration = demonstration;
     }
 
-    @Override
-    public String toString() {
-        return "ProductDTO{" +
-                "ProductName='" + ProductName + '\'' +
-                ", Job='" + Job + '\'' +
-                ", price=" + price +
-                ", levelRestriction=" + levelRestriction +
-                ", demonstration='" + demonstration + '\'' +
-                '}';
+    public ProductDTO(String productName, String job, int price, int levelRestriction, String demonstration) {
+        ProductName = productName;
+        Job = job;
+        this.price = price;
+        this.levelRestriction = levelRestriction;
+        this.demonstration = demonstration;
+    }
+
+    public ProductDTO() {
     }
 }
