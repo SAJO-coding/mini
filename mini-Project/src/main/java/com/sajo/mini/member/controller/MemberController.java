@@ -5,8 +5,10 @@ import com.sajo.mini.model.dto.MemberDTO;
 import java.util.Scanner;
 
 public class MemberController {
-
+    /* 시작 정보입력
+    *  사용자 서비스 */
         Scanner sc = new Scanner(System.in);
+        static MemberDTO memberDTO;
         MemberManagerController mmc = new MemberManagerController();
         ProductController pc = new ProductController();
 
@@ -20,10 +22,8 @@ public class MemberController {
         sc.nextLine();
         System.out.print("직업을 입력해주세요 (힐러,탱커,딜러 중 선택): ");
         String job = sc.nextLine();
-        int a = 1 ; //직업 특성의 능력치와 연결할 부분
 
-        MemberDTO memberDTO = new MemberDTO(name,job,level, 10000);
-
+        memberDTO = new MemberDTO(name,job,level,mmc.goldCaculator(level,job));
 
         while (true){
             System.out.println();
@@ -40,9 +40,9 @@ public class MemberController {
                     break;
                 case 2 : mmc.cartPrint();
                     break;
-                case 3 : //buy 호출
+                case 3 : buy();
                     break;
-                case 4 :
+                case 9 :
                     return;
                 default:
                     System.out.println("존재하는 번호가 아닙니다.");
@@ -61,10 +61,17 @@ public class MemberController {
             System.out.println("3. 딜러");
             System.out.print("원하시는 아이템 카테고리의 번호를 입력해주세요 : ");
             int answer =sc.nextInt();
-            pc.butProduct(answer);
+
+            mmc.itemCart(pc.buyProduct(answer));
 
         }
 
     }
+    public void buy(){
+        //장바구니 출력 후 구매하시겠습니까? 출력
+        //구매한다고 하면 돈 차감, 재고에서 삭제
+        //구매 안하면 다시 선택지로
+    }
+
 
 }

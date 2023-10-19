@@ -3,7 +3,7 @@ package com.sajo.mini.member.controller;
 import com.sajo.mini.model.dto.ItemDTO;
 import com.sajo.mini.model.dto.MemberDTO;
 
-public class MemberManagerController {
+public class MemberManagerController {// 장바구니
 
 //    //아이템 객체 배열
 //    Item item1 = new Item("갑옷1", "딜러", 2000, 5, "방어력 +10");
@@ -14,7 +14,9 @@ public class MemberManagerController {
 //    Item[] items = new Item[] {item1, item2, item3};
 
     // 임시 사용자 정보
-    MemberDTO member1 = new MemberDTO("yunha", "딜러", 5, 10000);
+//    MemberDTO member1 = new MemberDTO("yunha", "딜러", 5, 10000);
+
+
 
 
     // 장바구니
@@ -31,27 +33,50 @@ public class MemberManagerController {
             }
         }
     }
+    public int goldCaculator(int level,String job) { //healer, dealer, tanker
+        int healer = 1;
+        int dealer = 2;
+        int tanker = 3;
+
+//        String job = memberDTO.getUserJob();
+//        int level = memberDTO.getUserLevel();
+        // 동락님 연결해주세여
+
+        int jobValue = 1;
+        if (job.equals("heller") || job.equals("힐러")) {
+            jobValue = healer;
+        } else if (job.equals("dealer") || job.equals("딜러")) {
+            jobValue = dealer;
+        } else if (job.equals("tanker") || job.equals("탱커")) {
+            jobValue = tanker;
+        } else {
+
+        }
+        int ability;
+        ability = level * jobValue;
+        System.out.println("보유골드 : " + ability);
+
+        //골드 비교 - 동락님
+        return ability;
+    }
+
+    public void levelCompare(){
+        // 레벨 비교 - 성민님
+    }
 
 
-
-    // 장바구니에 아이템 담기
-        //해당 아이템 번호를 받았다고 가정
     public void itemCart(ItemDTO itemDTO){
 
-        if(member1.getUserJob() != itemDTO.getItemJob()){
-            System.out.println("직업이 맞지 않아 담을 수 없습니다.");
-        }
-        if(member1.getUserLevel() < itemDTO.getItemLevel()){
-            System.out.println("레벨이 낮아서 담을 수 없습니다.");
-        }
-        else{
-            cart[itemCount] = itemDTO;
+        // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
 
-            cartPrint();
 
-            itemCount++;
+        cart[itemCount] = itemDTO;
 
-        }
+        cartPrint();
+
+        itemCount++;
+
+
 
     }
 
