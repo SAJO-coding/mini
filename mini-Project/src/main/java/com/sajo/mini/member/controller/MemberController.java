@@ -1,5 +1,6 @@
-package com.sajo.mini.member.controller;
+package com.sajo.mini.model.service;
 
+import com.sajo.mini.member.controller.ProductController;
 import com.sajo.mini.model.dto.MemberDTO;
 
 import java.util.Scanner;
@@ -8,7 +9,6 @@ public class MemberController {
 
         Scanner sc = new Scanner(System.in);
         MemberManagerController mmc = new MemberManagerController();
-
         ProductController pc = new ProductController();
 
 
@@ -18,11 +18,13 @@ public class MemberController {
         String name = sc.nextLine();
         System.out.print("레벨을 입력해주세요 : ");
         int level = sc.nextInt();
-        System.out.print("직업을 입력해주세요 : ");
+        sc.nextLine();
+        System.out.print("직업을 입력해주세요 (힐러,탱커,딜러 중 선택): ");
         String job = sc.nextLine();
         int a = 1 ; //직업 특성의 능력치와 연결할 부분
 
         MemberDTO memberDTO = new MemberDTO(name,job,level, 10000);
+
 
         while (true){
             System.out.println();
