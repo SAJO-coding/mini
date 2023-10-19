@@ -1,28 +1,20 @@
 package com.sajo.mini.member.controller;
 
+import com.sajo.mini.model.dto.Item;
+
 public class MainController {
 
     public static void main(String[] args) {
-        System.out.println("yunha-cha");
-        System.out.println("yunha-cha");
-        System.out.println("yunha-cha");
-        System.out.println("yunha-cha");
-        System.out.println("yunha-cha");
-        System.out.println("yunha-cha");
-        System.out.println("2");
-        System.out.println("ㅇㅂㅈㅇasd2읩ㅈㅇㅈ");
-        System.out.println("4");
+
+        //아이템 객체 배열
+        Item item1 = new Item("갑옷1", "딜러", 2000, 5, "방어력 +10");
+        Item item2 = new Item("신발1", "딜러", 3000, 8, "속도 +10");
+        Item item3 = new Item("바지1", "딜러", 5000, 4, "힐 +10");
+
+       MemberController memberController = new MemberController();
+       memberController.itemCart(item3);
 
     }
 
-    public void testMethod() {
 
-        System.out.println("test입니다.");
-        System.out.println("test1111입니다.");
-        System.out.println("test2222입니다.");
-        System.out.println("test33333입니다.");
-        System.out.println("test44444입니다.");
-        System.out.println("test 목요일 4:12");
-        System.out.println("test 목요일 4:18");
-    }
 }
