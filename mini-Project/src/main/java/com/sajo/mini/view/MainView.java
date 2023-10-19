@@ -37,6 +37,8 @@ public class MainView {
         System.out.println("오늘 남아서 스터디!");
 
         System.out.println("wlrmadms 3tl 56qns");
+
+        System.out.println("g하이하이");
     }
 }
 
