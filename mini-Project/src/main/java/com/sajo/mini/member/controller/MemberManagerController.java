@@ -5,10 +5,7 @@ import com.sajo.mini.model.dto.MemberDTO;
 
 public class MemberManagerController {
 
-//    //아이템 객체 배열
-//    Item item1 = new Item("갑옷1", "딜러", 2000, 5, "방어력 +10");
-//    Item item2 = new Item("신발1", "딜러", 3000, 8, "속도 +10");
-//    Item item3 = new Item("바지1", "딜러", 5000, 4, "힐 +10");
+
 
     // 딜러 아이템 객체 배열
 //    Item[] items = new Item[] {item1, item2, item3};

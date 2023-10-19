@@ -12,7 +12,27 @@ public class ProductController {
     ArrayList<ItemDTO> dealerItemDTO = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
-    public List<ItemDTO> butProduct(int answer){
+
+    //아이템 객체
+    ItemDTO ditem1 = new ItemDTO("갑옷1", "딜러", 2000, 5, "방어력 +10");
+    ItemDTO ditem2 = new ItemDTO("신발1", "딜러", 3000, 8, "속도 +10");
+    ItemDTO ditem3 = new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10");
+    ItemDTO hitem1 = new ItemDTO("갑옷1", "힐러", 2000, 5, "방어력 +10");
+    ItemDTO hitem2 = new ItemDTO("신발1", "힐러", 3000, 8, "속도 +10");
+    ItemDTO hitem3 = new ItemDTO("바지1", "힐러", 5000, 4, "힐 +10");
+    ItemDTO titem1 = new ItemDTO("갑옷1", "탱커", 1000, 7, "방어력 +10");
+    ItemDTO titem2 = new ItemDTO("신발1", "탱커", 3000, 8, "속도 +10");
+    ItemDTO titem3 = new ItemDTO("바지1", "탱커", 5000, 4, "힐 +10");
+
+
+
+    public ArrayList<ItemDTO> butProduct(int answer){
+
+        dealerItemDTO.add(ditem1);
+        dealerItemDTO.add(ditem2);
+        dealerItemDTO.add(ditem3);
+
+
         ArrayList<ItemDTO> wantBuy = new ArrayList<>();
         //선택한 번호의 템을 출력한다.
         int want;
