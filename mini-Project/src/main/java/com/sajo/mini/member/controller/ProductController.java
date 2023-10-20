@@ -9,12 +9,18 @@ import java.util.Scanner;
 public class ProductController { // 연산기능
 
     //아이템 객체 배열
-    ItemDTO item1 = new ItemDTO("갑옷1", "딜러", 2000, 5, "방어력 +10");
-    ItemDTO item2 = new ItemDTO("신발1", "딜러", 3000, 8, "속도 +10");
-    ItemDTO item3 = new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10");
+//    ItemDTO item1 = new ItemDTO("갑옷1", "딜러", 2000, 5, "방어력 +10");
+//    ItemDTO item2 = new ItemDTO("신발1", "딜러", 3000, 8, "속도 +10");
+//    ItemDTO item3 = new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10");
     ArrayList<ItemDTO> healerItemDTO = new ArrayList<>();
     ArrayList<ItemDTO> tankerItemDTO = new ArrayList<>();
     ArrayList<ItemDTO> dealerItemDTO = new ArrayList<>();
+
+    {
+        healerItemDTO.add(new ItemDTO("갑옷1", "힐러", 2000, 5, "방어력 +10"));
+        tankerItemDTO.add(new ItemDTO("신발1", "탱커", 3000, 8, "속도 +10"));
+        dealerItemDTO.add(new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10"));
+    }
 
 
     Scanner sc = new Scanner(System.in);
@@ -26,6 +32,7 @@ public class ProductController { // 연산기능
             System.out.println("2. 아이템 조회");
             System.out.println("3. 아이템 삭제");
             System.out.println("4. 종료");
+            System.out.print("번호를 입력해주세요 :");
             int num1 = sc.nextInt();
             sc.nextLine();
             switch (num1){
@@ -47,19 +54,19 @@ public class ProductController { // 연산기능
     private void productRegistration() {
         while (true) {
             System.out.println("===== 아이템 등록 =====");
-            System.out.println("아이템 명을 입력해주세요 : ");
+            System.out.print("아이템 명을 입력해주세요 : ");
             String productName = sc.nextLine();
-            System.out.println("등록하시려는 아이템의 직업????을 입력해주세요 : ");
             System.out.println("힐러 / 탱커 / 딜러");
+            System.out.print("등록하시려는 아이템의 직업????을 입력해주세요 : ");
             String job = sc.nextLine();
-            System.out.println("아이템의 레벨을 입력해주세요 : ");
+            System.out.print("아이템의 레벨을 입력해주세요 : ");
             int levelRestriction = sc.nextInt();
-            System.out.println("아이템의 가격을 입력해주세요 : ");
+            System.out.print("아이템의 가격을 입력해주세요 : ");
             int price = sc.nextInt();
             sc.nextLine();
-            System.out.println("아이템 설명을 입력해주세요 : ");
+            System.out.print("아이템 이펙트를 입력해주세요 : ");
             String demonstration = sc.nextLine();
-            System.out.println("계속 입력하겠습니까? (y/n) : ");
+            System.out.print("계속 입력하겠습니까? (y/n) : ");
             char ch = sc.nextLine().toUpperCase().charAt(0);
 
 
@@ -83,45 +90,63 @@ public class ProductController { // 연산기능
 
     private void productList() {
         System.out.println("------------ 등록된 아이템 ------------");
-        System.out.println(healerItemDTO);
-        System.out.println(tankerItemDTO);
-        System.out.println(dealerItemDTO);
+        for(int i = 0 ; i < healerItemDTO.size(); i++){
+            System.out.println(i+ " "+ healerItemDTO.get(i) + " ");
 
+        }
+
+        for(int i = 0 ; i < tankerItemDTO.size(); i++){
+            System.out.println(i+ " "+ tankerItemDTO.get(i) + " ");
+
+        }
+
+        for(int i = 0 ; i < dealerItemDTO.size(); i++){
+            System.out.println(i+ " "+ dealerItemDTO.get(i) + " ");
+
+        }
     }
 
     private void productDelete() {
-        System.out.println("===== 아이템 삭제 =====");
-        System.out.println("삭제할 아이템명 입력 : ");
-        String ProductName = sc.nextLine();
         productList();
+        System.out.println("===== 아이템 삭제 =====");
+        System.out.println("1. 아이템 번호로 삭제");
+        System.out.println("2. 아이템 명으로 삭제");
+        System.out.println("번호를 선택해주세요");
+        int num5 = sc.nextInt();
+        switch (num5) {
+            case 1:
+            case 2:
+            System.out.print("삭제할 아이템명 입력 : ");
+            String ProductName = sc.nextLine();
 
-        for (ItemDTO healer : healerItemDTO) {
-            if (healer.getItemName().contains(ProductName)) {
-                healerItemDTO.remove(healer);
-                break;
+            for (ItemDTO healer : healerItemDTO) {
+                if (healer.getItemName().contains(ProductName)) {
+                    healerItemDTO.remove(healer);
+                    break;
+                }
             }
-        }
 
-        for (ItemDTO tanker : tankerItemDTO) {
-            if (tanker.getItemName().contains(ProductName)) {
-                tankerItemDTO.remove(tanker);
-                break;
+            for (ItemDTO tanker : tankerItemDTO) {
+                if (tanker.getItemName().contains(ProductName)) {
+                    tankerItemDTO.remove(tanker);
+                    break;
+                }
             }
-        }
 
-        for (ItemDTO dealer : dealerItemDTO) {
-            if (dealer.getItemName().contains(ProductName)) {
-                dealerItemDTO.remove(dealer);
-                break;
+            for (ItemDTO dealer : dealerItemDTO) {
+                if (dealer.getItemName().contains(ProductName)) {
+                    dealerItemDTO.remove(dealer);
+                    break;
+                }
             }
-        }
 
+        }
     }
 
     public ItemDTO buyProduct(int answer){
-        dealerItemDTO.add(item1);
-        dealerItemDTO.add(item2);
-        dealerItemDTO.add(item3);
+//        dealerItemDTO.add(item1);
+//        dealerItemDTO.add(item2);
+//        dealerItemDTO.add(item3);
 
         ItemDTO wantBuy = new ItemDTO();
         //선택한 번호의 템을 출력한다.
