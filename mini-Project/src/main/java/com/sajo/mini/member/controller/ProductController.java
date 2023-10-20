@@ -12,9 +12,9 @@ public class ProductController { // 연산기능
 //    ItemDTO item1 = new ItemDTO("갑옷1", "딜러", 2000, 5, "방어력 +10");
 //    ItemDTO item2 = new ItemDTO("신발1", "딜러", 3000, 8, "속도 +10");
 //    ItemDTO item3 = new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10");
-    ArrayList<ItemDTO> healerItemDTO = new ArrayList<>();
-    ArrayList<ItemDTO> tankerItemDTO = new ArrayList<>();
-    ArrayList<ItemDTO> dealerItemDTO = new ArrayList<>();
+    static ArrayList<ItemDTO> healerItemDTO = new ArrayList<>();
+    static ArrayList<ItemDTO> tankerItemDTO = new ArrayList<>();
+    static ArrayList<ItemDTO> dealerItemDTO = new ArrayList<>();
 
     {
         healerItemDTO.add(new ItemDTO("갑옷1", "힐러", 2000, 5, "방어력 +10"));
