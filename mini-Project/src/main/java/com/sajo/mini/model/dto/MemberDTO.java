@@ -1,6 +1,7 @@
 package com.sajo.mini.model.dto;
 
-public class MemberDTO {private String userId;
+public class MemberDTO {
+    private String userId;
     private String userJob;
     int userLevel;
     int userGold;
@@ -39,6 +40,13 @@ public class MemberDTO {private String userId;
         this.userLevel = userLevel;
     }
 
+    public int getUserGold() {
+        return userGold;
+    }
+
+    public void setUserGold(int userGold) {
+        this.userGold = userGold;
+    }
 
     @Override
     public String toString() {
