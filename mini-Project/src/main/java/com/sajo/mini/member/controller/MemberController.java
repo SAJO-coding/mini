@@ -13,17 +13,24 @@ public class MemberController {
         ProductController pc = new ProductController();
 
 
-    public void selectNumber(){
+
+        // 사용자 정보를 입력받는 메소드
+        public void infoUser() {
 
         System.out.print("닉네임을 입력해주세요 : ");
         String name = sc.nextLine();
         System.out.print("레벨을 입력해주세요 : ");
         int level = sc.nextInt();
-        sc.nextLine();
+//        sc.nextLine();
         System.out.print("직업을 입력해주세요 (힐러,탱커,딜러 중 선택): ");
-        String job = sc.nextLine();
+        String job = sc.next();
 
-        memberDTO = new MemberDTO(name,job,level,mmc.goldCaculator(level,job));
+        memberDTO = new MemberDTO(name, job, level, mmc.goldCaculator(level, job));
+    }
+
+
+    // 상점 메뉴를 선택하는 메소드
+    public void selectNumber(){
 
         while (true){
             System.out.println();
