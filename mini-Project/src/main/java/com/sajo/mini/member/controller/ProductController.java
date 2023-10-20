@@ -24,7 +24,6 @@ public class ProductController { // 연산기능
 
 
     Scanner sc = new Scanner(System.in);
-
     public void selectNumber(){
         while(true) {
             System.out.println("=========== 메뉴 선택 ===========");
@@ -170,6 +169,9 @@ public class ProductController { // 연산기능
                 want =sc.nextInt();
                 wantBuy=dealerItemDTO.get(want - 1);
                 break;
+            case 9 :
+                System.out.println("물건 구매를 종료합니다.");
+                return wantBuy;
             default:
                 System.out.println("존재하는 번호가 아닙니다.");
                 System.out.println("다시 입력해주세요");
@@ -178,6 +180,7 @@ public class ProductController { // 연산기능
 
         return wantBuy;
     }
+
 
 
 
