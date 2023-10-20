@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class MemberController {
     /* 시작 정보입력
-    *  사용자 서비스 */
-        Scanner sc = new Scanner(System.in);
-        static MemberDTO memberDTO;
-        MemberManagerController mmc = new MemberManagerController();
-        ProductController pc = new ProductController();
+     *  사용자 서비스 */
+    Scanner sc = new Scanner(System.in);
+    static MemberDTO memberDTO;
+    MemberManagerController mmc = new MemberManagerController();
+    ProductController pc = new ProductController();
 
 
 
@@ -66,6 +66,7 @@ public class MemberController {
             System.out.println("1. 힐러");
             System.out.println("2. 탱커");
             System.out.println("3. 딜러");
+            System.out.println("9. 물건 구매 종료");
             System.out.print("원하시는 아이템 카테고리의 번호를 입력해주세요 : ");
             int answer =sc.nextInt();
 

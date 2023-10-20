@@ -21,6 +21,7 @@ public class MemberManagerController {// 장바구니
     ItemDTO[] cart = new ItemDTO[10];
 
     MemberDTO mb = new MemberDTO();
+    ItemDTO it = new ItemDTO();
 
 
     // 장바구니 내용 출력
@@ -31,6 +32,7 @@ public class MemberManagerController {// 장바구니
                 System.out.println(c);
             }
         }
+
     }
     public int goldCaculator(int level,String job) { //healer, dealer, tanker
         int healer = 1;
@@ -58,11 +60,22 @@ public class MemberManagerController {// 장바구니
         //골드 비교 - 동락님
         return ability;
     }
+    public boolean goldCompare(){
+        for (int i = 0; i < cart.length; i++){
+            if(cart[i] != null){
+                if(mb.getUserGold() > cart[i].getItemPrice()){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     public boolean levelCompare(){
         // 레벨 비교 - 성민님
 //        itemCount++;
-        return mb.getUserLevel() >= cart[itemCount].getItemLevel();
+        return mb.getUserLevel() >= it.getItemLevel();
     }
 
 
@@ -87,6 +100,11 @@ public class MemberManagerController {// 장바구니
 
         // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
 
+
+        //리턴 값이 0(프로그램 종료면)이면 return
+
+
+        System.out.println("장바구니에 담겼습니다.");
 
         cart[itemCount] = itemDTO;
 
