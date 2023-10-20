@@ -40,6 +40,13 @@ public class MemberDTO {
         this.userLevel = userLevel;
     }
 
+    public int getUserGold() {
+        return userGold;
+    }
+
+    public void setUserGold(int userGold) {
+        this.userGold = userGold;
+    }
 
     @Override
     public String toString() {
