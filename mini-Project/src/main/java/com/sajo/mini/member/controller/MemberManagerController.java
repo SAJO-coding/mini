@@ -18,7 +18,6 @@ public class MemberManagerController {// 장바구니
 
 
 
-
     // 장바구니
     int itemCount = 0;
     ItemDTO[] cart = new ItemDTO[10];
