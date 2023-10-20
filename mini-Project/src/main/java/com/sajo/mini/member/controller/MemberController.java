@@ -13,8 +13,8 @@ public class MemberController {
     ProductController pc = new ProductController();
 
 
-    public void insertInformation() {
 
+    public void selectNumber() {
         System.out.print("닉네임을 입력해주세요 : ");
         String name = sc.nextLine();
         System.out.print("레벨을 입력해주세요 : ");
@@ -24,14 +24,6 @@ public class MemberController {
         String job = sc.nextLine();
 
         memberDTO = new MemberDTO(name, job, level, mmc.goldCaculator(level, job));
-
-        selectNumber();
-
-
-    }
-
-    public void selectNumber() {
-
 
         while(true)
 

@@ -13,6 +13,7 @@ public class Application {
         System.out.println("===페이지 선택===");
         System.out.println("1. 상인관리페이지");
         System.out.println("2. 구매자 페이지");
+        System.out.println("3. 프로그램 종료");
         System.out.print("이용할 서비스를 선택해주세요 : ");
         int num1 = sc.nextInt();
         switch (num1){
@@ -22,8 +23,11 @@ public class Application {
                 break;
             case 2 :
                 MemberController mc = new MemberController();
-                mc.insertInformation();
+                mc.selectNumber();
                 break;
+            case 3 :
+                System.out.println("프로그램을 종료합니다.");
+                return;
         }
     }
 }
