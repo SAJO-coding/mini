@@ -1,9 +1,7 @@
 package com.sajo.mini.run;
 
 import com.sajo.mini.member.controller.MemberController;
-import com.sajo.mini.member.controller.MemberManagerController;
 import com.sajo.mini.member.controller.ProductController;
-import com.sajo.mini.model.dto.ItemDTO;
 
 import java.util.Scanner;
 
