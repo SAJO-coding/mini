@@ -34,6 +34,7 @@ public class MemberManagerController {// 장바구니
                 System.out.println(c);
             }
         }
+
     }
     public int goldCaculator(int level,String job) { //healer, dealer, tanker
         int healer = 1;
@@ -90,6 +91,10 @@ public class MemberManagerController {// 장바구니
 
         // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
 
+        //리턴 값이 0(프로그램 종료면)이면 return
+
+
+        System.out.println("장바구니에 담겼습니다.");
 
         cart[itemCount] = itemDTO;
 
