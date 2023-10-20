@@ -26,6 +26,7 @@ public class MemberManagerController {// 장바구니
     MemberDTO mb = new MemberDTO();
 
 
+
     // 장바구니 내용 출력
     public void cartPrint(){
         System.out.println("=========== 장바구니 ===========");
@@ -62,6 +63,17 @@ public class MemberManagerController {// 장바구니
         //골드 비교 - 동락님
         return ability;
     }
+    public boolean goldCompare(){
+        for (int i = 0; i < cart.length; i++){
+            if(cart[i] != null){
+                if(mb.getUserGold() > cart[i].getItemPrice()){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     public boolean levelCompare(){
         // 레벨 비교 - 성민님
@@ -90,6 +102,7 @@ public class MemberManagerController {// 장바구니
     public void itemCart(ItemDTO itemDTO){
 
         // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
+
 
         //리턴 값이 0(프로그램 종료면)이면 return
 
