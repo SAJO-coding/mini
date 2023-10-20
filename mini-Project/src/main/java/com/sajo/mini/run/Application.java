@@ -3,7 +3,6 @@ package com.sajo.mini.run;
 import com.sajo.mini.member.controller.MemberController;
 import com.sajo.mini.member.controller.ProductController;
 
-
 import java.util.Scanner;
 
 public class Application {
