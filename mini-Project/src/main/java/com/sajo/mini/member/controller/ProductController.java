@@ -59,10 +59,10 @@ public class ProductController { // 연산기능
             System.out.println("힐러 / 탱커 / 딜러");
             System.out.print("등록하시려는 아이템의 직업분류를 입력해주세요 : ");
             String job = sc.nextLine();
+                        System.out.print("아이템의 가격을 입력해주세요 : ");
+            int price = sc.nextInt();
             System.out.print("아이템의 레벨을 입력해주세요 : ");
             int levelRestriction = sc.nextInt();
-            System.out.print("아이템의 가격을 입력해주세요 : ");
-            int price = sc.nextInt();
             sc.nextLine();
             System.out.print("아이템 이펙트를 입력해주세요 : ");
             String demonstration = sc.nextLine();
@@ -71,13 +71,13 @@ public class ProductController { // 연산기능
 
 
             if (job.equals("힐러")) {
-                healerItemDTO.add(new ItemDTO(productName, job, levelRestriction, price, demonstration));
+                healerItemDTO.add(new ItemDTO(productName, job, price, levelRestriction, demonstration));
                 System.out.println(healerItemDTO);
             } else if (job.equals("탱커")) {
-                tankerItemDTO.add(new ItemDTO(productName, job, levelRestriction, price, demonstration));
+                tankerItemDTO.add(new ItemDTO(productName, job, price, levelRestriction, demonstration));
                 System.out.println(tankerItemDTO);
             } else if (job.equals("딜러")) {
-                dealerItemDTO.add(new ItemDTO(productName, job, levelRestriction, price, demonstration));
+                dealerItemDTO.add(new ItemDTO(productName, job, price, levelRestriction, demonstration));
                 System.out.println(dealerItemDTO);
             }
 
