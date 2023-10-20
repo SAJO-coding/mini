@@ -23,6 +23,8 @@ public class MemberManagerController {// 장바구니
     int itemCount = 0;
     ItemDTO[] cart = new ItemDTO[10];
 
+    MemberDTO mb = new MemberDTO();
+
 
     // 장바구니 내용 출력
     public void cartPrint(){
@@ -60,9 +62,28 @@ public class MemberManagerController {// 장바구니
         return ability;
     }
 
-    public void levelCompare(){
+    public boolean levelCompare(){
         // 레벨 비교 - 성민님
+//        itemCount++;
+        return mb.getUserLevel() >= cart[itemCount].getItemLevel();
     }
+
+
+//    public boolean levelCompare(/*int classLevel, int productLevel*/){
+//        // 레벨 비교 - 성민님
+//        for (int i = 0; i < cart.length; i++) {
+//
+//            if (cart[i] != null){
+//
+//                if (mb.getUserLevel() > cart[i].getItemLevel()){
+//
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
+
 
 
     public void itemCart(ItemDTO itemDTO){
