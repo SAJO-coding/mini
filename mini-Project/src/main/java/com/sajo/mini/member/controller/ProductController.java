@@ -30,7 +30,7 @@ public class ProductController { // 연산기능
             System.out.println("1. 아이템 등록");
             System.out.println("2. 아이템 조회");
             System.out.println("3. 아이템 삭제");
-            System.out.println("4. 종료");
+            System.out.println("4. 메인페이지로");
             System.out.print("번호를 입력해주세요 : ");
             int num1 = sc.nextInt();
             sc.nextLine();
