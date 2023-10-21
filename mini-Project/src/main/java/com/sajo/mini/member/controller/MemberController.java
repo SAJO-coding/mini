@@ -8,14 +8,14 @@ public class MemberController {
     /* 시작 정보입력
      *  사용자 서비스 */
     Scanner sc = new Scanner(System.in);
-    static MemberDTO memberDTO;
+    static MemberDTO user; // user 변수명 수정
     MemberManagerController mmc = new MemberManagerController();
     ProductController pc = new ProductController();
 
 
 
         // 사용자 정보를 입력받는 메소드
-        public void infoUser() {
+    public void infoUser() {
 
         System.out.print("닉네임을 입력해주세요 : ");
         String name = sc.nextLine();
@@ -25,14 +25,14 @@ public class MemberController {
         System.out.print("직업을 입력해주세요 (힐러,탱커,딜러 중 선택): ");
         String job = sc.next();
 
-        memberDTO = new MemberDTO(name, job, level, mmc.goldCaculator(level, job));
+        user = new MemberDTO(name, job, level, mmc.goldCaculator(level, job));
     }
 
 
     // 상점 메뉴를 선택하는 메소드
     public void selectNumber(){
 
-        while (true){
+        while (true) {
             System.out.println();
             System.out.println("===선택지===");
             System.out.println("1. 물건 보기");
@@ -42,14 +42,17 @@ public class MemberController {
             System.out.print("번호를 입력해주세요 : ");
 
             int answer = sc.nextInt();
-            switch (answer){
-                case 1 : productCategory();
+            switch (answer) {
+                case 1:
+                    productCategory();
                     break;
-                case 2 : mmc.cartPrint();
+                case 2:
+                    mmc.cartPrint();
                     break;
-                case 3 : buy();
+                case 3:
+                    mmc.itemBuy();
                     break;
-                case 9 :
+                case 9:
                     return;
                 default:
                     System.out.println("존재하는 번호가 아닙니다.");
@@ -62,24 +65,31 @@ public class MemberController {
     }
 
     public void productCategory(){
-        while (true){
+
+        while (true) {
+
             System.out.println("1. 힐러");
             System.out.println("2. 탱커");
             System.out.println("3. 딜러");
-            System.out.println("9. 물건 구매 종료");
+//            System.out.println("9. 물건 구매 종료");
             System.out.print("원하시는 아이템 카테고리의 번호를 입력해주세요 : ");
-            int answer =sc.nextInt();
+            int answer = sc.nextInt();
 
+            // 에러 원인 가능성
             mmc.itemCart(pc.buyProduct(answer));
-
         }
 
     }
-    public void buy(){
-        //장바구니 출력 후 구매하시겠습니까? 출력
-        //구매한다고 하면 돈 차감, 재고에서 삭제
-        //구매 안하면 다시 선택지로
-    }
+//    public void itemBuy(){
+//
+//        System.out.println("구매 메소드");
+//        //장바구니 출력 후 구매하시겠습니까? 출력
+//        //구매한다고 하면 돈 차감, 재고에서 삭제
+//        //구매 안하면 다시 선택지로
+//
+//        if()
+//
+//    }
 
 
 }

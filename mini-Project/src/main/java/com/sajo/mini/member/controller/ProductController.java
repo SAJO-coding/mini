@@ -17,9 +17,9 @@ public class ProductController { // 연산기능
     ArrayList<ItemDTO> dealerItemDTO = new ArrayList<>();
 
     {
-        healerItemDTO.add(new ItemDTO("갑옷1", "힐러", 2000, 5, "방어력 +10"));
-        tankerItemDTO.add(new ItemDTO("신발1", "탱커", 3000, 8, "속도 +10"));
-        dealerItemDTO.add(new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10"));
+        healerItemDTO.add(new ItemDTO("갑옷1", "힐러", 20, 5, "방어력 +10"));
+        tankerItemDTO.add(new ItemDTO("신발1", "탱커", 30, 8, "속도 +10"));
+        dealerItemDTO.add(new ItemDTO("바지1", "딜러", 5, 4, "힐 +10"));
     }
 
 
@@ -136,9 +136,7 @@ public class ProductController { // 연산기능
 
 
     public ItemDTO buyProduct(int answer){
-//        dealerItemDTO.add(item1);
-//        dealerItemDTO.add(item2);
-//        dealerItemDTO.add(item3);
+
 
         ItemDTO wantBuy = new ItemDTO();
         //선택한 번호의 템을 출력한다.
@@ -169,9 +167,9 @@ public class ProductController { // 연산기능
                 want =sc.nextInt();
                 wantBuy=dealerItemDTO.get(want - 1);
                 break;
-            case 9 :
-                System.out.println("물건 구매를 종료합니다.");
-                return wantBuy;
+//            case 9 :
+//                System.out.println("물건 구매를 종료합니다.");
+//                return wantBuy;
             default:
                 System.out.println("존재하는 번호가 아닙니다.");
                 System.out.println("다시 입력해주세요");
@@ -180,10 +178,5 @@ public class ProductController { // 연산기능
 
         return wantBuy;
     }
-
-
-
-
-
 
 }
