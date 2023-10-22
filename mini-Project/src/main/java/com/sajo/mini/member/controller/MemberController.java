@@ -73,11 +73,10 @@ public class MemberController {
             System.out.println("1. 힐러");
             System.out.println("2. 탱커");
             System.out.println("3. 딜러");
-//            System.out.println("9. 물건 구매 종료");
+            System.out.println("9. 물건 구매 종료");
             System.out.print("원하시는 아이템 카테고리의 번호를 입력해주세요 : ");
             int answer = sc.nextInt();
 
-            // 에러 원인 가능성
             mmc.itemCart(pc.buyProduct(answer));
         }
 
