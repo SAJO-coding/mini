@@ -87,6 +87,10 @@ public class MemberManagerController {// 장바구니
                     dealerItemDTO.remove(item);
                 }
             }
+            cartItem.clear();
+//            cartSum = 0;
+
+
 
 
         }
@@ -180,6 +184,7 @@ public class MemberManagerController {// 장바구니
                 System.out.println("yes");
                 mc.productCategory();
             } else if (c == 'n') {
+
                 return;
 
             }
