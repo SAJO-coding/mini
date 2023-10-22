@@ -2,6 +2,7 @@ package com.sajo.mini.member.controller;
 
 import com.sajo.mini.model.dto.ItemDTO;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 import java.util.Scanner;
@@ -26,6 +27,8 @@ public class ProductController { // 연산기능
     Scanner sc = new Scanner(System.in);
     public void selectNumber(){
         while(true) {
+            System.out.println("");
+            System.out.println("");
             System.out.println("*•.¸✨¸.•*” 메뉴 선택 *•.¸✨¸.•*”");
             System.out.println("1. 아이템 등록");
             System.out.println("2. 아이템 조회");
@@ -52,6 +55,7 @@ public class ProductController { // 연산기능
 
     private void productRegistration() {
         while (true) {
+            System.out.println("");
             System.out.println("*•.¸✨¸.•*” 아이템 등록 *•.¸✨¸.•*”");
             System.out.print("아이템 명을 입력해주세요 : ");
             String productName = sc.nextLine();
@@ -70,20 +74,20 @@ public class ProductController { // 연산기능
 
 
             if (job.equals("힐러")) {
-                System.out.println("*•.¸✨¸.•*” 등록된 힐러 아이템 *•.¸✨¸.•*”");
+                System.out.print("*•.¸✨¸.•*” 등록된 힐러 아이템 *•.¸✨¸.•*”");
                 healerItemDTO.add(new ItemDTO(productName, job, price, levelRestriction, demonstration));
                 for (ItemDTO healer : healerItemDTO) {
-                    System.out.println(healer);}
+                    System.out.print(healer);}
             } else if (job.equals("탱커")) {
-                System.out.println("*•.¸✨¸.•*” 등록된 탱커 아이템 *•.¸✨¸.•*”");
+                System.out.print("*•.¸✨¸.•*” 등록된 탱커 아이템 *•.¸✨¸.•*”");
                 tankerItemDTO.add(new ItemDTO(productName, job, price, levelRestriction, demonstration));
                 for (ItemDTO tanker : tankerItemDTO) {
-                    System.out.println(tanker);}
+                    System.out.print(tanker);}
             } else if (job.equals("딜러")) {
-                System.out.println("*•.¸✨¸.•*” 등록된 딜러 아이템 *•.¸✨¸.•*”");
+                System.out.print("*•.¸✨¸.•*” 등록된 딜러 아이템 *•.¸✨¸.•*”");
                 dealerItemDTO.add(new ItemDTO(productName, job, price, levelRestriction, demonstration));
                 for (ItemDTO dealer : dealerItemDTO) {
-                    System.out.println(dealer);}
+                    System.out.print(dealer);}
             }
 
             if (ch == 'N') {
@@ -94,26 +98,29 @@ public class ProductController { // 연산기능
 
 
     private void productList() {
-        System.out.println("*•.¸✨¸.•*” 등록된 아이템 *•.¸✨¸.•*”");
+        System.out.println("");
+        System.out.print("*•.¸✨¸.•*” 등록된 아이템 *•.¸✨¸.•*”");
         for(int i = 0 ; i < healerItemDTO.size(); i++){
-            System.out.println(healerItemDTO.get(i) + " ");
+            System.out.print(healerItemDTO.get(i) + " ");
 
         }
 
         for(int i = 0 ; i < tankerItemDTO.size(); i++){
-            System.out.println(tankerItemDTO.get(i) + " ");
+            System.out.print(tankerItemDTO.get(i) + " ");
 
         }
 
         for(int i = 0 ; i < dealerItemDTO.size(); i++){
-            System.out.println(dealerItemDTO.get(i) + " ");
+            System.out.print(dealerItemDTO.get(i) + " ");
 
         }
     }
 
     private void productDelete() {
-        productList();
         System.out.println("*•.¸✨¸.•*” 아이템 삭제 *•.¸✨¸.•*”");
+
+        productList();
+        System.out.println("");
             System.out.print("삭제할 아이템명 입력 : ");
             String ProductName = sc.nextLine();
 
