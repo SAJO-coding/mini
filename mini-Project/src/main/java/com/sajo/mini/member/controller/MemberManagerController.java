@@ -6,6 +6,8 @@ import com.sajo.mini.model.dto.MemberDTO;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.sajo.mini.member.controller.ProductController.*;
+
 
 public class MemberManagerController {// 장바구니
 
@@ -142,32 +144,36 @@ public class MemberManagerController {// 장바구니
     public void itemCart(ItemDTO itemDTO){
 
         // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
-//        if(goldCompare() && levelCompare()){
+
+
+        //리턴 값이 null(해당 카테고리 제품 매진)이면 return
+        if(itemDTO!=null) {
+
+
             // 장바구니 ArrayList에 아이템 추가
             System.out.println(" [ 장바구니에 담겼습니다.] ");
             cartItem.add(itemDTO);
-//        }
+
+            // 장바구니 확인
+            cartPrint();
 
 
-        //리턴 값이 0(프로그램 종료면)이면 return
+            System.out.println();
+            System.out.print("아이템을 더 구매하시겠습니까?(y/n) : ");
+            char c = sc.next().charAt(0);
 
+            MemberController mc = new MemberController();
 
-
-        // 장바구니 확인
-        cartPrint();
-
-        System.out.println();
-        System.out.println("아이템을 더 구매하시겠습니까?(y/n)");
-        char c = sc.next().charAt(0);
-
-        MemberController mc = new MemberController();
-
-        if(c == 'y'){
-            System.out.println("yes");
-            mc.productCategory();
-        }else if( c == 'n'){
-            // 구매 메소드
-            itemBuy();
+            if (c == 'y') {
+                System.out.println("yes");
+                mc.productCategory();
+            } else if (c == 'n') {
+                // 구매 메소드
+                itemBuy();
+            }
+        }
+        else{
+            return;
         }
 
 
