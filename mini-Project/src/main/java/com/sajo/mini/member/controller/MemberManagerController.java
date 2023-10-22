@@ -16,6 +16,8 @@ public class MemberManagerController {// 장바구니
     // 입력 받기
     Scanner sc = new Scanner(System.in);
 
+
+
     // 사용자 정보
 
     // 장바구니 아이템
@@ -178,12 +180,12 @@ public class MemberManagerController {// 장바구니
                 System.out.println("yes");
                 mc.productCategory();
             } else if (c == 'n') {
-                // 구매 메소드
-                itemBuy();
+                return;
+
             }
         }
         else{
-            return;
+
         }
 
 
