@@ -40,7 +40,7 @@ public class MemberController {
             System.out.println("1. 물건 보기");
             System.out.println("2. 장바구니 확인");
             System.out.println("3. 구매하기");
-            System.out.println("9. 프로그램 종료");
+            System.out.println("9. 메인 페이지로");
             System.out.print("번호를 입력해주세요 : ");
 
             int answer = sc.nextInt();
