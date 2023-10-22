@@ -6,6 +6,8 @@ import com.sajo.mini.model.dto.MemberDTO;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.sajo.mini.member.controller.ProductController.*;
+
 
 public class MemberManagerController {// 장바구니
 
@@ -62,8 +64,8 @@ public class MemberManagerController {// 장바구니
         if(MemberController.user.getUserGold() < cartSum){
             System.out.println("돈이 부족하여 구매할 수 없습니다.");
             System.out.println("남은 골드 : " + MemberController.user.getUserGold());
-            // 메인 페이지로 selectNumber() 호출하는 방법?
-
+            // selectNumber() 메인으로 호출하는 방법?
+            return;
 
         }else{
             System.out.println("=========== 구매가 완료되었습니다 ===========");
@@ -74,19 +76,22 @@ public class MemberManagerController {// 장바구니
             System.out.println("남은 골드 : " + MemberController.user.getUserGold());
 
             // 재고에서 아이템 제거
+            for(ItemDTO item : cartItem){
+                if(item.getItemJob().equals("힐러")){
+                    healerItemDTO.remove(item);
+                }
+                if(item.getItemJob().equals("탱커")){
+                    tankerItemDTO.remove(item);
+                }
+                if(item.getItemJob().equals("딜러")){
+                    dealerItemDTO.remove(item);
+                }
+            }
 
 
         }
 
-
-
     }
-
-
-
-
-
-
 
 
     public int goldCaculator(int level,String job) { //healer, dealer, tanker
@@ -117,11 +122,11 @@ public class MemberManagerController {// 장바구니
     }
     public boolean goldCompare(){
         for (int i = 0; i < cartItem.size(); i++){
-            if(cartItem.get(i) != null){
-                if(MemberController.user.getUserGold() > cartItem.get(i).getItemPrice()){
+//            if(cartItem.get(i) != null){
+                if(MemberController.user.getUserGold() >= cartItem.get(i).getItemPrice()){
                     return true;
                 }
-            }
+//            }
         }
         return false;
     }
@@ -134,35 +139,32 @@ public class MemberManagerController {// 장바구니
 //    }
 
 
-//    public boolean levelCompare(/*int classLevel, int productLevel*/){
-//        // 레벨 비교 - 성민님
-//        for (int i = 0; i < cart.length; i++) {
-//
-//            if (cart[i] != null){
-//
-//                if (mb.getUserLevel() > cart[i].getItemLevel()){
-//
-//                    return true;
-//                }
-//            }
-//        }
-//        return false;
-//    }
+    public boolean levelCompare(){
+        // 레벨 비교 - 성민님
+        for (int i = 0; i < cartItem.size(); i++) {
+            if (MemberController.user.getUserLevel() > cartItem.get(i).getItemLevel()){
+
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
     public void itemCart(ItemDTO itemDTO){
 
-        // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
-
-
         //리턴 값이 null(해당 카테고리 제품 매진)이면 return
         if(itemDTO!=null) {
 
 
+            // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
+//        if(goldCompare() && levelCompare()){
+
             // 장바구니 ArrayList에 아이템 추가
             System.out.println(" [ 장바구니에 담겼습니다.] ");
             cartItem.add(itemDTO);
+//        }
 
             // 장바구니 확인
             cartPrint();

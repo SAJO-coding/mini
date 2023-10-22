@@ -80,16 +80,7 @@ public class MemberController {
 
 
     }
-//    public void itemBuy(){
-//
-//        System.out.println("구매 메소드");
-//        //장바구니 출력 후 구매하시겠습니까? 출력
-//        //구매한다고 하면 돈 차감, 재고에서 삭제
-//        //구매 안하면 다시 선택지로
-//
-//        if()
-//
-//    }
+
 
 
 }
