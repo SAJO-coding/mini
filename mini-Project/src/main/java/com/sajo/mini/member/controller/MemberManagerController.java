@@ -178,12 +178,12 @@ public class MemberManagerController {// 장바구니
                 System.out.println("yes");
                 mc.productCategory();
             } else if (c == 'n') {
-                // 구매 메소드
-                itemBuy();
+                return;
+
             }
         }
         else{
-            return;
+
         }
 
 

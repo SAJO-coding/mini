@@ -68,7 +68,6 @@ public class MemberController {
 
     public void productCategory(){
 
-        while (true) {
 
             System.out.println("1. 힐러");
             System.out.println("2. 탱커");
@@ -78,7 +77,7 @@ public class MemberController {
             int answer = sc.nextInt();
 
             mmc.itemCart(pc.buyProduct(answer));
-        }
+
 
     }
 //    public void itemBuy(){
