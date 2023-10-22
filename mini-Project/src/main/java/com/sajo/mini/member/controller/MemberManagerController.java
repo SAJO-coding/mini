@@ -16,8 +16,6 @@ public class MemberManagerController {// 장바구니
     // 입력 받기
     Scanner sc = new Scanner(System.in);
 
-
-
     // 사용자 정보
 
     // 장바구니 아이템
@@ -65,7 +63,7 @@ public class MemberManagerController {// 장바구니
             System.out.println("돈이 부족하여 구매할 수 없습니다.");
             System.out.println("남은 골드 : " + MemberController.user.getUserGold());
             // selectNumber() 메인으로 호출하는 방법?
-
+            return;
 
         }else{
             System.out.println("=========== 구매가 완료되었습니다 ===========");
@@ -76,6 +74,17 @@ public class MemberManagerController {// 장바구니
             System.out.println("남은 골드 : " + MemberController.user.getUserGold());
 
             // 재고에서 아이템 제거
+            for(ItemDTO item : cartItem){
+                if(item.getItemJob().equals("힐러")){
+                    healerItemDTO.remove(item);
+                }
+                if(item.getItemJob().equals("탱커")){
+                    tankerItemDTO.remove(item);
+                }
+                if(item.getItemJob().equals("딜러")){
+                    dealerItemDTO.remove(item);
+                }
+            }
 
 
         }
@@ -143,16 +152,17 @@ public class MemberManagerController {// 장바구니
 
     public void itemCart(ItemDTO itemDTO){
 
-        // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
-
-
         //리턴 값이 null(해당 카테고리 제품 매진)이면 return
         if(itemDTO!=null) {
 
 
+            // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
+//        if(goldCompare() && levelCompare()){
+
             // 장바구니 ArrayList에 아이템 추가
             System.out.println(" [ 장바구니에 담겼습니다.] ");
             cartItem.add(itemDTO);
+//        }
 
             // 장바구니 확인
             cartPrint();
