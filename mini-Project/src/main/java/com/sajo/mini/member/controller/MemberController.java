@@ -26,7 +26,9 @@ public class MemberController {
         String job = sc.next();
 
         user = new MemberDTO(name, job, level, mmc.goldCaculator(level, job));
+        selectNumber();
     }
+
 
 
     // 상점 메뉴를 선택하는 메소드
@@ -38,7 +40,7 @@ public class MemberController {
             System.out.println("1. 물건 보기");
             System.out.println("2. 장바구니 확인");
             System.out.println("3. 구매하기");
-            System.out.println("9. 프로그램 종료");
+            System.out.println("9. 메인 페이지로");
             System.out.print("번호를 입력해주세요 : ");
 
             int answer = sc.nextInt();
@@ -71,11 +73,10 @@ public class MemberController {
             System.out.println("1. 힐러");
             System.out.println("2. 탱커");
             System.out.println("3. 딜러");
-//            System.out.println("9. 물건 구매 종료");
+            System.out.println("9. 물건 구매 종료");
             System.out.print("원하시는 아이템 카테고리의 번호를 입력해주세요 : ");
             int answer = sc.nextInt();
 
-            // 에러 원인 가능성
             mmc.itemCart(pc.buyProduct(answer));
         }
 
