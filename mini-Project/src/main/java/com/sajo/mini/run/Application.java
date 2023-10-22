@@ -11,7 +11,7 @@ public class Application {
 
         MemberController mc = new MemberController();
 
-        mc.infoUser();
+//        mc.infoUser();
 
 //        while (true) {
             System.out.println("===페이지 선택===");
@@ -27,6 +27,7 @@ public class Application {
                     break;
                 case 2:
 //                    MemberController mc = new MemberController();
+                    mc.infoUser();
                     mc.selectNumber();
                     break;
                 case 3:
