@@ -9,11 +9,9 @@ public class Application {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        MemberController mc = new MemberController();
 
-        mc.infoUser();
 
-//        while (true) {
+        while (true) {
             System.out.println("===페이지 선택===");
             System.out.println("1. 상인관리페이지");
             System.out.println("2. 구매자 페이지");
@@ -26,14 +24,14 @@ public class Application {
                     pc.selectNumber();
                     break;
                 case 2:
-//                    MemberController mc = new MemberController();
-                    mc.selectNumber();
+                    MemberController mc = new MemberController();
+                    mc.infoUser();
                     break;
                 case 3:
                     System.out.println("프로그램을 종료합니다.");
                     return;
             }
-//        }
+        }
 
 
     }

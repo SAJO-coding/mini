@@ -65,7 +65,7 @@ public class ItemDTO {
     @Override
     public String toString() {
         return
-                "itemName='" + itemName + '\'' +
+                "\nitemName='" + itemName + '\'' +
                 ", itemJob='" + itemJob + '\'' +
                 ", itemPrice=" + itemPrice +
                 ", itemLevel=" + itemLevel +

@@ -137,6 +137,8 @@ public class ProductController { // 연산기능
 
     public ItemDTO buyProduct(int answer){
 
+        System.out.println("buyproduct 실행");
+
 
         ItemDTO wantBuy = new ItemDTO();
         //선택한 번호의 템을 출력한다.

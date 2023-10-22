@@ -167,7 +167,7 @@ public class MemberManagerController {// 장바구니
         cartPrint();
 
         System.out.println();
-        System.out.println("아이템을 더 구매하시겠습니까?(y/n)");
+        System.out.print("아이템을 더 구매하시겠습니까?(y/n) : ");
         char c = sc.next().charAt(0);
 
         MemberController mc = new MemberController();

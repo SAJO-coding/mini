@@ -26,7 +26,9 @@ public class MemberController {
         String job = sc.next();
 
         user = new MemberDTO(name, job, level, mmc.goldCaculator(level, job));
+        selectNumber();
     }
+
 
 
     // 상점 메뉴를 선택하는 메소드
