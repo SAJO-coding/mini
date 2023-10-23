@@ -36,7 +36,7 @@ public class MemberController {
 
         while (true) {
             System.out.println();
-            System.out.println("===선택지===");
+            System.out.println("*•.¸✨¸.•*” 선택지 *•.¸✨¸.•*”");
             System.out.println("1. 물건 보기");
             System.out.println("2. 장바구니 확인");
             System.out.println("3. 구매하기");

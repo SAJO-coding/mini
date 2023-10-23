@@ -12,7 +12,7 @@ public class Application {
 
 
         while (true) {
-            System.out.println("===페이지 선택===");
+            System.out.println("*•.¸✨¸.•*” 페이지 선택 *•.¸✨¸.•*”");
             System.out.println("1. 상인관리페이지");
             System.out.println("2. 구매자 페이지");
             System.out.println("3. 프로그램 종료");

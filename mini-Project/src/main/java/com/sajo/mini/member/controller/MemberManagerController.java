@@ -33,7 +33,7 @@ public class MemberManagerController {// 장바구니
     public void cartPrint(){
 
         System.out.println();
-        System.out.println("=========== 장바구니 ===========");
+        System.out.println("*•.¸✨¸.•*” 장바구니 *•.¸✨¸.•*”");
         if(cartItem.size() == 0){
             System.out.println("비어있습니다.");
         } else {
@@ -46,6 +46,7 @@ public class MemberManagerController {// 장바구니
         System.out.println();
         System.out.println("담은 아이템 개수 : " + cartItem.size());
         System.out.println("가격 총합 : " + cartSum + " Gold");
+        cartSum = 0;
 
     }
 
@@ -68,7 +69,7 @@ public class MemberManagerController {// 장바구니
             return;
 
         }else{
-            System.out.println("=========== 구매가 완료되었습니다 ===========");
+            System.out.println("*•.¸✨¸.•*” 구매가 완료되었습니다 *•.¸✨¸.•*”");
 
             // 골드 차감
             int currGold = MemberController.user.getUserGold() - cartSum;
@@ -88,7 +89,6 @@ public class MemberManagerController {// 장바구니
                 }
             }
             cartItem.clear();
-//            cartSum = 0;
 
 
 
