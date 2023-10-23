@@ -1,5 +1,7 @@
 package com.sajo.mini.model.dto;
 
+import java.util.ArrayList;
+
 public class ItemDTO {
 
     private String itemName;
@@ -8,6 +10,11 @@ public class ItemDTO {
     private int itemLevel;
 
     private String effect;
+    public ArrayList<ItemDTO> healerItemDTO = new ArrayList<>();
+    public ArrayList<ItemDTO> tankerItemDTO = new ArrayList<>();
+    public ArrayList<ItemDTO> dealerItemDTO = new ArrayList<>();
+
+
 
     public ItemDTO() {
     }

@@ -161,8 +161,12 @@ public class ProductController { // 연산기능
                     for (int i = 0; i < healerItemDTO.size(); i++) {
                         System.out.println((i + 1) + "번 " + healerItemDTO.get(i));
                     }
-                    System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 : ");
+                    System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 (구매를 원하시지 않으면 0번을 눌러주세요): ");
                     want = sc.nextInt();
+                    if(want==0){
+                        wantBuy=null;
+                        break;
+                    }
                     wantBuy = healerItemDTO.get(want - 1);
                 }
                 else{
@@ -175,8 +179,12 @@ public class ProductController { // 연산기능
                     for (int i = 0; i < tankerItemDTO.size(); i++) {
                         System.out.println((i + 1) + "번 " + tankerItemDTO.get(i));
                     }
-                    System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 : ");
+                    System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 (구매를 원하시지 않으면 0번을 눌러주세요): ");
                     want = sc.nextInt();
+                    if(want==0){
+                        wantBuy=null;
+                        break;
+                    }
                     wantBuy = tankerItemDTO.get(want - 1);
                 }
                 else{
@@ -189,8 +197,12 @@ public class ProductController { // 연산기능
                     for (int i = 0; i < dealerItemDTO.size(); i++) {
                         System.out.println((i + 1) + "번 " + dealerItemDTO.get(i));
                     }
-                    System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 : ");
+                    System.out.print("구매를 원하는 아이템의 번호를 입력해주세요 (구매를 원하시지 않으면 0번을 눌러주세요): ");
                     want = sc.nextInt();
+                    if(want==0){
+                        wantBuy=null;
+                        break;
+                    }
                     wantBuy = dealerItemDTO.get(want - 1);
                 }
                 else{

@@ -76,7 +76,8 @@ public class MemberController {
             System.out.print("원하시는 아이템 카테고리의 번호를 입력해주세요 : ");
             int answer = sc.nextInt();
 
-            mmc.itemCart(pc.buyProduct(answer));
+                mmc.itemCart(pc.buyProduct(answer));
+
 
 
     }
