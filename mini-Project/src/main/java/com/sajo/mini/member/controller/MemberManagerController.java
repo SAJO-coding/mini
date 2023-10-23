@@ -130,15 +130,12 @@ public class MemberManagerController {// 장바구니
 
 
 
-    public boolean levelCompare(ItemDTO itemDTO) {
+    public boolean levelCompare(ItemDTO itemDTO){
         // 레벨 비교 - 성민님
-        for (int i = 0; i < cartItem.size(); i++) {
-            if (MemberController.user.getUserLevel() > cartItem.get(i).getItemLevel()) {
-
+            if (MemberController.user.getUserLevel() >= itemDTO.getItemLevel()){
                 return true;
             }
-            return false;
-        }
+        return false;
     }
 
 
