@@ -19,19 +19,20 @@ public class MemberManagerController {// 장바구니
 
 
     // 사용자 정보
+    // MemberController.user
 
     // 장바구니 아이템
     private static ArrayList<ItemDTO> cartItem = new ArrayList<>();
 
 
     // 장바구니 가격 총합
-    int cartSum = 0;
+    static int cartSum = 0;
 
 
     // 장바구니 내용 출력
     // 장바구니 내용 출력하는 메소드
     public void cartPrint(){
-        cartSum = 0;
+
         System.out.println();
         System.out.println("*•.¸✨¸.•*” 장바구니 *•.¸✨¸.•*”");
         if(cartItem.size() == 0){
@@ -58,8 +59,6 @@ public class MemberManagerController {// 장바구니
         //구매한다고 하면 돈 차감, 재고에서 삭제
         //구매 안하면 다시 선택지로
 
-
-//        cartPrint();
 
         if(MemberController.user.getUserGold() < cartSum){
             System.out.println("돈이 부족하여 구매할 수 없습니다.");
@@ -88,9 +87,7 @@ public class MemberManagerController {// 장바구니
                 }
             }
             cartItem.clear();
-
-
-
+            cartSum = 0;
 
         }
 
@@ -123,33 +120,22 @@ public class MemberManagerController {// 장바구니
         //골드 비교 - 동락님
         return ability;
     }
-    public boolean goldCompare(){
-        for (int i = 0; i < cartItem.size(); i++){
-//            if(cartItem.get(i) != null){
-                if(MemberController.user.getUserGold() >= cartItem.get(i).getItemPrice()){
+    public boolean goldCompare(ItemDTO itemDTO){
+
+                if(MemberController.user.getUserGold() >= itemDTO.getItemPrice()){
                     return true;
                 }
-//            }
-        }
         return false;
     }
 
 
-//    public boolean levelCompare(){
-//        // 레벨 비교 - 성민님
-////        itemCount++;
-//        return mb.getUserLevel() >= it.getItemLevel();
-//    }
 
-
-    public boolean levelCompare(){
+    public boolean levelCompare(ItemDTO itemDTO){
         // 레벨 비교 - 성민님
-        for (int i = 0; i < cartItem.size(); i++) {
-            if (MemberController.user.getUserLevel() > cartItem.get(i).getItemLevel()){
+            if (MemberController.user.getUserLevel() >= itemDTO.getItemLevel()){
 
                 return true;
             }
-        }
         return false;
     }
 
@@ -160,18 +146,27 @@ public class MemberManagerController {// 장바구니
         //리턴 값이 null(해당 카테고리 제품 매진)이면 return
         if(itemDTO!=null) {
 
+            // test
+//            System.out.println("levelCompare : " + levelCompare(itemDTO));
+//            System.out.println("goldCompare : " + goldCompare(itemDTO));
 
             // 골드 비교와 레벨 비교 둘다 통과하면 장바구니에 넣기
-//        if(goldCompare() && levelCompare()){
+        if(!goldCompare(itemDTO)){  // if문의 {} 안에 있는 코드를 실행하려면 조건절의결과가 true
+            System.out.println("골드가부족해");
+        }
 
+        if(!levelCompare(itemDTO)){
+            System.out.println("레벨이부족해");
+        }
+
+        if(goldCompare(itemDTO) && levelCompare(itemDTO)){
             // 장바구니 ArrayList에 아이템 추가
             System.out.println(" [ 장바구니에 담겼습니다.] ");
             cartItem.add(itemDTO);
-//        }
+        }
 
             // 장바구니 확인
             cartPrint();
-
 
             System.out.println();
             System.out.print("아이템을 더 구매하시겠습니까?(y/n) : ");
@@ -183,13 +178,13 @@ public class MemberManagerController {// 장바구니
                 System.out.println("yes");
                 mc.productCategory();
             } else if (c == 'n') {
-
                 return;
 
             }
         }
         else{
-
+            System.out.println("품절 (┬┬﹏┬┬)");
+            return;
         }
 
 
