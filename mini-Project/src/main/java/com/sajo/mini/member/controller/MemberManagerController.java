@@ -31,7 +31,7 @@ public class MemberManagerController {// 장바구니
     // 장바구니 내용 출력
     // 장바구니 내용 출력하는 메소드
     public void cartPrint(){
-
+        cartSum = 0;
         System.out.println();
         System.out.println("*•.¸✨¸.•*” 장바구니 *•.¸✨¸.•*”");
         if(cartItem.size() == 0){
@@ -46,7 +46,6 @@ public class MemberManagerController {// 장바구니
         System.out.println();
         System.out.println("담은 아이템 개수 : " + cartItem.size());
         System.out.println("가격 총합 : " + cartSum + " Gold");
-        cartSum = 0;
 
     }
 
