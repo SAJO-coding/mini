@@ -30,6 +30,10 @@ public class Application {
                 case 3:
                     System.out.println("프로그램을 종료합니다.");
                     return;
+                default:
+                    System.out.println("존재하는 번호가 아닙니다.");
+                    System.out.println("다시 입력해주세요");
+                    break;
             }
         }
 

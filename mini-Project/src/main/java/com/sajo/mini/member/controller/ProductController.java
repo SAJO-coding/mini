@@ -48,6 +48,10 @@ public class ProductController { // 연산기능
                     productDelete();
                     break;
                 case 4: return;
+                default:
+                    System.out.println("존재하는 번호가 아닙니다.");
+                    System.out.println("다시 입력해주세요");
+                    break;
 
             }
         }
