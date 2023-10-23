@@ -5,7 +5,7 @@ import com.sajo.mini.member.controller.ProductController;
 
 import java.util.Scanner;
 
-public class Application {
+public class Application {//test
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
