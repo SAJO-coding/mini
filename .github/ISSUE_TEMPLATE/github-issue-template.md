@@ -1,6 +1,6 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: Github Issue Template
+about: 깃허브 이슈 등록 템플릿
 title: ''
 labels: ''
 assignees: ''
