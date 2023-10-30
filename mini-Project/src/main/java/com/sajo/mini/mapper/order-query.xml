@@ -5,13 +5,29 @@
     
     <comment/>
     <entry key="selectAllCategory">
-        SELECT A.item_Name,
-        A.item_Job,
-        A.item_Price,
-        A.item_Level,
-        A.item_effect
+        SELECT
+        A.Item_Number,
+        A.Item_Name,
+        A.JobCode,
+        A.Item_Price,
+        A.Item_Level,
+        A.Item_Effect
         FROM item A
 
+    </entry>
+    <entry key="insertItem">
+        INSERT INTO item(
+        Item_Name,
+        JobCode,
+        Item_Price,
+        Item_Level,
+        Item_Effect)
+        VALUES(?, ?, ?, ?, ?)
+    </entry>
+    <entry key="deleteItem">
+        DELETE
+        FROM Item
+        WHERE Item_Name = ?
     </entry>
 
 
