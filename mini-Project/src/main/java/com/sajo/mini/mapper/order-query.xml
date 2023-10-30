@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    
+    
+    <comment/>
+    <entry key="selectAllCategory">
+        SELECT A.item_Name,
+        A.item_Job,
+        A.item_Price,
+        A.item_Level,
+        A.item_effect
+        FROM item A
+
+    </entry>
+
+
+</properties>
