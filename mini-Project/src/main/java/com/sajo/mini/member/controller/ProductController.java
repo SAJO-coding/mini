@@ -1,6 +1,7 @@
 package com.sajo.mini.member.controller;
 
 import com.sajo.mini.model.dto.ItemDTO;
+import com.sajo.mini.service.ProductService;
 
 import javax.management.Query;
 import java.io.FileInputStream;
@@ -12,6 +13,7 @@ import static com.sajo.mini.common.JDBCTemplate.close;
 import static com.sajo.mini.common.JDBCTemplate.getConnection;
 
 public class ProductController { // 연산기능
+    private ProductService productService = new ProductService();
     Connection con = getConnection();
     PreparedStatement pstmt1 = null;
     PreparedStatement pstmt2 = null;
@@ -19,12 +21,6 @@ public class ProductController { // 연산기능
     ResultSet rset1 = null;
     Properties prop = new Properties();
     List<Map> itemList = null;
-
-
-    //아이템 객체 배열
-    ItemDTO item1 = new ItemDTO("갑옷1", "딜러", 2000, 5, "방어력 +10");
-    ItemDTO item2 = new ItemDTO("신발1", "딜러", 3000, 8, "속도 +10");
-    ItemDTO item3 = new ItemDTO("바지1", "딜러", 5000, 4, "힐 +10");
     static ArrayList<ItemDTO> healerItemDTO = new ArrayList<>();
     static ArrayList<ItemDTO> tankerItemDTO = new ArrayList<>();
     static ArrayList<ItemDTO> dealerItemDTO = new ArrayList<>();
@@ -34,10 +30,15 @@ public class ProductController { // 연산기능
         tankerItemDTO.add(new ItemDTO("신발1", "탱커", 30, 8, "속도 +10"));
         dealerItemDTO.add(new ItemDTO("바지1", "딜러", 5, 4, "힐 +10"));
     }
+
     String Art = "\uD83D\uDC95\uD83C\uDF3C˚*•.¸✨¸.•*”\uD83D\uDC95\uD83C\uDF3C˚*•.¸✨¸.•*”\uD83D\uDC95\uD83C\uDF3C˚*•.¸✨¸.•*”";
 
     Scanner sc = new Scanner(System.in);
     public void selectNumber(){
+        List<ItemDTO> itemDTOList = new ArrayList<>();
+
+        Scanner sc = new Scanner(System.in);
+
         while(true) {
             System.out.println("");
             System.out.println("");
@@ -65,188 +66,71 @@ public class ProductController { // 연산기능
         }
     }
 
-    private void productRegistration() {
-
+    public void productRegistration() {
 
         int result = 0;
+        Scanner sc = new Scanner(System.in);
+        ItemDTO itemDTO = new ItemDTO();
 
-        try {
-            prop.loadFromXML(new FileInputStream("src/main/java/com/sajo/mini/mapper/order-query.xml"));
-
-            String query1 = prop.getProperty("insertItem");
-            while (true) {
-                System.out.println("");
-                System.out.println("*•.¸✨¸.•*” 아이템 등록 *•.¸✨¸.•*”");
-                System.out.print("아이템 명을 입력해주세요 : ");
-                String productName = sc.nextLine();
-                System.out.println("힐러 / 탱커 / 딜러");
-                System.out.print("등록하시려는 아이템의 직업분류를 입력해주세요 : ");
-                String job = sc.nextLine();
-                System.out.print("아이템의 가격을 입력해주세요 : ");
-                int price = sc.nextInt();
-                System.out.print("아이템의 레벨을 입력해주세요 : ");
-                int levelRestriction = sc.nextInt();
-                sc.nextLine();
-                System.out.print("아이템 이펙트를 입력해주세요 : ");
-                String demonstration = sc.nextLine();
-                System.out.print("계속 입력하겠습니까? (y/n) : ");
-                char ch = sc.nextLine().toUpperCase().charAt(0);
-
-                int jobNumber = 0;
-                switch (job){
-                    case "힐러" : jobNumber = 1; break;
-                    case "탱커" : jobNumber = 2; break;
-                    case "딜러" : jobNumber = 3; break;
-                }
+        do {
+            System.out.println("");
+            System.out.println("*•.¸✨¸.•*” 아이템 등록 *•.¸✨¸.•*”");
+            System.out.print("아이템 명을 입력해주세요 : ");
+            String productName = sc.nextLine();
+            System.out.println("힐러 / 탱커 / 딜러");
+            System.out.print("등록하시려는 아이템의 직업분류를 입력해주세요 : ");
+            String job = sc.nextLine();
+            System.out.print("아이템의 가격을 입력해주세요 : ");
+            int price = sc.nextInt();
+            System.out.print("아이템의 레벨을 입력해주세요 : ");
+            int levelRestriction = sc.nextInt();
+            sc.nextLine();
+            System.out.print("아이템 이펙트를 입력해주세요 : ");
+            String demonstration = sc.nextLine();
+            System.out.print("계속 입력하겠습니까? (y/n) : ");
+            char ch = sc.nextLine().toUpperCase().charAt(0);
 
 
-                pstmt1 = con.prepareStatement(query1);
-                pstmt1.setString(1, productName);
-                pstmt1.setInt(2, jobNumber);
-                pstmt1.setInt(3, price);
-                pstmt1.setInt(4, levelRestriction);
-                pstmt1.setString(5, demonstration);
+            itemDTO.setItemName(productName);
+            itemDTO.setItemJob(job);
+            itemDTO.setItemPrice(price);
+            itemDTO.setItemLevel(levelRestriction);
+            itemDTO.setEffect(demonstration);
 
 
-                result = pstmt1.executeUpdate();
-
-                if (ch == 'N') {
-                    break;
-                }
+            if (ch == 'N') {
+                break;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            close(pstmt1);
-            close(con);
-        }
+
+        }while (true);
+
+        productService.productRegistration(itemDTO);
+        System.out.println("itemDTO = " + itemDTO);
 
 
     }
 
 
-    private void productList() {
+    public void productList() {
 
 
         System.out.println("");
         System.out.print("*•.¸✨¸.•*” 등록된 아이템 *•.¸✨¸.•*”");
-        Connection con = getConnection();
-        PreparedStatement pstmt4 = null;
-        ResultSet rset4 = null;
-        ItemDTO itemDTO = null;
-        List<ItemDTO> itemList = null;
-
-        Properties prop = new Properties();
-        try {
-            try {
-                prop.loadFromXML(new FileInputStream("src/main/java/com/sajo/mini/mapper/order-query.xml"));
-
-            String query4 = prop.getProperty("selectAllCategory");
-            pstmt4 = con.prepareStatement(query4);
-
-            rset4 = pstmt4.executeQuery();
-            itemList = new ArrayList<>();
-
-
-            while (rset4.next()){
-                itemDTO = new ItemDTO();
-
-                itemDTO.setItemName(rset4.getString("Item_Name"));
-                itemDTO.setItemJob(rset4.getString("JobCode"));
-                itemDTO.setItemPrice(rset4.getInt("Item_Price"));
-                itemDTO.setItemLevel(rset4.getInt("Item_Level"));
-                itemDTO.setEffect(rset4.getString("Item_Effect"));
-
-                itemList.add(itemDTO);
-
-
-
-
-            }} catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            close(rset4);
-            close(pstmt4);
-            close(con);
-        }
-        for(ItemDTO itemdto : itemList){
-            System.out.println(itemdto);
-        }
-
-//        for(int i = 0 ; i < healerItemDTO.size(); i++){
-//            System.out.print(healerItemDTO.get(i) + " ");
-//
-//        }
-//
-//        for(int i = 0 ; i < tankerItemDTO.size(); i++){
-//            System.out.print(tankerItemDTO.get(i) + " ");
-//
-//        }
-//
-//        for(int i = 0 ; i < dealerItemDTO.size(); i++){
-//            System.out.print(dealerItemDTO.get(i) + " ");
-//
-//        }
-
-
+        List<ItemDTO> itemDTOList = productService.selectAllItem();
+        System.out.println(itemDTOList);
 
     }
 
-    private void productDelete() {
+    public void productDelete() {
         System.out.println("*•.¸✨¸.•*” 아이템 삭제 *•.¸✨¸.•*”");
-
-        Connection con = getConnection();
-        PreparedStatement pstmt3 = null;
-        int result = 0;
-
-        Properties prop = new Properties();
-        try {
-            prop.loadFromXML(new FileInputStream("src/main/java/com/sajo/mini/mapper/order-query.xml"));
-            String query3 = prop.getProperty("deleteItem");
+        List<ItemDTO> itemDTOList = productService.selectAllItem();
+        System.out.println(itemDTOList);
             System.out.println("삭제할 아이템 명을 입력하세요 : ");
             String Item_Name = sc.nextLine();
 
-            pstmt3 = con.prepareStatement(query3);
-            pstmt3.setString(1, Item_Name);
-
-            result = pstmt3.executeUpdate();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            close(pstmt3);
-            close(con);
-        }
+            productService.productDelete(Item_Name);
 
 
-//            for (ItemDTO healer : healerItemDTO) {
-//                if (healer.getItemName().contains(ProductName)) {
-//                    healerItemDTO.remove(healer);
-//                    break;
-//                }
-//            }
-//
-//            for (ItemDTO tanker : tankerItemDTO) {
-//                if (tanker.getItemName().contains(ProductName)) {
-//                    tankerItemDTO.remove(tanker);
-//                    break;
-//                }
-//            }
-//
-//            for (ItemDTO dealer : dealerItemDTO) {
-//                if (dealer.getItemName().contains(ProductName)) {
-//                    dealerItemDTO.remove(dealer);
-//                    break;
-//                }
-//            }
 
         }
 
@@ -326,6 +210,7 @@ public class ProductController { // 연산기능
 
         return wantBuy;
     }
+
 
 
 

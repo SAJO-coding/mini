@@ -1,5 +1,6 @@
 package com.sajo.mini.model.dao;
 
+import com.sajo.mini.common.JDBCTemplate;
 import com.sajo.mini.model.dto.ItemDTO;
 
 import java.io.FileInputStream;
@@ -26,7 +27,7 @@ public class ItemDAO {
         PreparedStatement pstmt = null;
         ResultSet rset = null;
         List<ItemDTO> itemDTOList = null;
-        String query = prop.getProperty("selectAllCategory");
+        String query = prop.getProperty("selectAllItem");
 
         try {
             pstmt = con.prepareStatement(query);
@@ -35,17 +36,66 @@ public class ItemDAO {
 
             while (rset.next()){
                 ItemDTO item = new ItemDTO();
-                item.setItemName(rset.getString("아이템명"));
-                item.setItemJob(rset.getString("직업"));
-                item.setItemLevel(rset.getInt("레벨"));
-                item.setItemPrice(rset.getInt("가격"));
-                item.setEffect(rset.getString("효과"));
+                item.setItemName(rset.getString("Item_Name"));
+                item.setItemJob(rset.getString("JobCode"));
+                item.setItemLevel(rset.getInt("Item_Level"));
+                item.setItemPrice(rset.getInt("Item_Price"));
+                item.setEffect(rset.getString("Item_Effect"));
 
+                itemDTOList.add(item);
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            JDBCTemplate.close(rset);
+            JDBCTemplate.close(pstmt);
         }
     return itemDTOList;
+    }
+
+    public int productRegistration(Connection con, ItemDTO itemDTO) {
+
+        PreparedStatement pstmt = null;
+
+        int result = 0;
+
+        String query = prop.getProperty("insertItem");
+
+        try {
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, itemDTO.getItemName());
+            pstmt.setInt(2, itemDTO.getItemJobNumber());
+            pstmt.setInt(3, itemDTO.getItemPrice());
+            pstmt.setInt(4, itemDTO.getItemLevel());
+            pstmt.setString(5, itemDTO.getEffect());
+
+            result = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBCTemplate.close(pstmt);
+        }
+        return  result;
+    }
+
+    public int productDelete(Connection con, String itemName) {
+        PreparedStatement pstmt = null;
+
+        int result = 0;
+
+        String query = prop.getProperty("productDelete");
+
+        try {
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, itemName);
+
+            result = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBCTemplate.close(pstmt);
+        }
+        return result;
     }
 }

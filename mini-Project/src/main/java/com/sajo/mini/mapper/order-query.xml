@@ -4,7 +4,7 @@
     
     
     <comment/>
-    <entry key="selectAllCategory">
+    <entry key="selectAllItem">
         SELECT
         A.Item_Number,
         A.Item_Name,
@@ -15,6 +15,7 @@
         FROM item A
 
     </entry>
+
     <entry key="insertItem">
         INSERT INTO item(
         Item_Name,
@@ -24,7 +25,7 @@
         Item_Effect)
         VALUES(?, ?, ?, ?, ?)
     </entry>
-    <entry key="deleteItem">
+    <entry key="productDelete">
         DELETE
         FROM Item
         WHERE Item_Name = ?
